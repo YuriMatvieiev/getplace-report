@@ -1,0 +1,44 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.button-main {
+  background-color: $brand;
+  border-radius: 100px;
+  color: $white;
+  line-height: math.div(24, 16);
+  transition: background-color 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #4f46e5;
+    }
+  }
+  &:active {
+    background-color: #4338ca;
+  }
+}
+
+.button-transparent {
+  border-radius: 100px;
+  border: 2px solid $brand;
+  font-weight: 600;
+  color: $brand;
+  transition:
+    color,
+    background-color 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $white;
+      background-color: $brand;
+    }
+  }
+  &:active {
+    background-color: #4338ca;
+  }
+}
+.violet {
+  color: $violet-600;
+}
+.blue {
+  color: $blue-600;
+}
+.emerald {
+  color: $emerald-600;
+}

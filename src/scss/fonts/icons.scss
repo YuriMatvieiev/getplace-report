@@ -1,0 +1,116 @@
+%ic {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+  &:before {
+    @extend %ic;
+    display: block;
+  }
+}
+
+._icon-location_city:before {
+  content: "\e920";
+}
+._icon-warning-field:before {
+  content: "\e900";
+}
+._icon-warning-regular:before {
+  content: "\e901";
+}
+._icon-sub-grid:before {
+  content: "\e902";
+}
+._icon-store:before {
+  content: "\e903";
+}
+._icon-shapes:before {
+  content: "\e904";
+}
+._icon-photo-filter:before {
+  content: "\e905";
+}
+._icon-open:before {
+  content: "\e906";
+}
+._icon-my-location:before {
+  content: "\e907";
+}
+._icon-location-field:before {
+  content: "\e908";
+}
+._icon-location-regular:before {
+  content: "\e909";
+}
+._icon-incoming-video:before {
+  content: "\e90a";
+}
+._icon-guest:before {
+  content: "\e90b";
+}
+._icon-error-field:before {
+  content: "\e90c";
+}
+._icon-error-regular:before {
+  content: "\e90d";
+}
+._icon-drive-mode:before {
+  content: "\e90e";
+}
+._icon-dismiss-regular:before {
+  content: "\e90f";
+}
+._icon-dismiss-field:before {
+  content: "\e910";
+}
+._icon-data-histogram:before {
+  content: "\e911";
+}
+._icon-compose:before {
+  content: "\e912";
+}
+._icon-comment:before {
+  content: "\e913";
+}
+._icon-clock:before {
+  content: "\e914";
+}
+._icon-chevron-left:before {
+  content: "\e915";
+}
+._icon-checkmark:before {
+  content: "\e916";
+}
+._icon-building:before {
+  content: "\e917";
+}
+._icon-board:before {
+  content: "\e918";
+}
+._icon-arrow-right:before {
+  content: "\e919";
+}
+._icon-directions-walk:before {
+  content: "\e91a";
+}
+._icon-domain:before {
+  content: "\e91b";
+}
+._icon-local-convenience_store:before {
+  content: "\e91c";
+}
+._icon-local-mall:before {
+  content: "\e91d";
+}
+._icon-restaurant:before {
+  content: "\e91e";
+}
+._icon-store-mall-directory:before {
+  content: "\e91f";
+}

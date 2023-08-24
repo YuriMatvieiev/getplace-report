@@ -1,0 +1,179 @@
+//====================================================================================================
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+  // &._header-scroll-down {
+  //   .header__top {
+  //     background: rgba(255, 255, 255, 1);
+  //   }
+  //   .header__bottom {
+  //     display: none;
+  //   }
+  // }
+  // &._header-scroll-up {
+  //   .header__top {
+  //     background: rgba(255, 255, 255, 1);
+  //   }
+  //   .header__bottom {
+  //     background-color: #f1f5f9;
+  //   }
+  // }
+  // .header__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: rem(1536);
+  }
+  // .header__top
+  &__top {
+    background: rgba(255, 255, 255, 0.01);
+    transition: background 0.3s ease 0s;
+    /* shadow-sm */
+    padding: 12px 0;
+    @media (max-width: $mobile) {
+      padding: 10px 0;
+    }
+  }
+  // .header__left
+  &__left {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 84, 20, 0, 1328, 767.98);
+  }
+  // .header__logo
+  &__logo {
+    width: 116px;
+    img {
+      width: 100%;
+    }
+  }
+  // .header__menu
+  // &__menu {
+  // }
+  // &__menu-list {
+  //   display: flex;
+  //   align-items: center;
+  //   @include adaptiveValue("gap", 24, 10, 0, 1328, 767.98);
+  //   @media (max-width: $mobile) {
+  //     @include adaptiveValue("line-height", 24, 16);
+  //   }
+  // }
+  // &__menu-link {
+  //   color: $gray;
+  //   font-weight: 500;
+  //   @include adaptiveValue("font-size", 16, 12);
+  //   @include adaptiveValue("line-height", 24, 16);
+
+  //   @media (any-hover: hover) {
+  //     &:hover {
+  //       color: $mainColor;
+  //       transition: all 0.3s ease 0s;
+  //     }
+  //   }
+  //   &.active {
+  //     color: $mainColor;
+  //   }
+  // }
+  // .header__buttons
+  &__buttons {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 20, 10, 0, 1328, 767.98);
+  }
+  // .header__button-log
+  // &__button-log {
+  //   font-weight: 600;
+  //   color: $brand;
+  //   border-bottom: 2px solid transparent;
+  //   transition: border-bottom 0.3s ease 0s;
+  //   @include adaptiveValue("font-size", 16, 12);
+  //   @include adaptiveValue("line-height", 24, 16);
+  //   @media (any-hover: hover) {
+  //     &:hover {
+  //       border-bottom: 2px solid $brand;
+  //     }
+  //   }
+  // }
+  // .header__button-demo
+  &__button-demo {
+    padding: 16px 32px;
+    font-size: rem(16);
+    border-radius: 8px;
+    @media (max-width: $tablet) {
+      padding: 16px 25px;
+    }
+    @media (max-width: $mobile) {
+      padding: 8px 16px;
+      font-size: rem(14);
+      line-height: math.div(20, 14);
+    }
+  }
+  // .header__bottom
+  // &__bottom {
+  //   transition: background-color 0.3s ease 0s;
+  // }
+  // &__submenu {
+  //   padding-left: 200px;
+  //   @media (max-width: $tablet) {
+  //     padding-left: 0;
+  //   }
+  // }
+  // &__submenu-list {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 24px;
+  //   padding: 16px 0;
+  //   @media (max-width: $mobile) {
+  //     padding: 14px;
+  //   }
+  //   @media (max-width: $mobileSmall) {
+  //     display: -webkit-box;
+  //     overflow: auto;
+  //     gap: 0;
+  //     li {
+  //       &:not(:last-child) {
+  //         margin-right: 24px;
+  //       }
+  //     }
+  //   }
+  // }
+  // &__submenu-link {
+  //   color: $gray;
+  //   font-weight: 500;
+  //   @media (any-hover: hover) {
+  //     &:hover {
+  //       color: $mainColor;
+  //       transition: all 0.3s ease 0s;
+  //     }
+  //   }
+  //   @media (max-width: $mobile) {
+  //     font-size: rem(14);
+  //     line-height: math.div(20, 14);
+  //   }
+  // }
+  // &__fixed {
+  //   position: fixed;
+  //   width: 100%;
+  //   bottom: 0;
+  //   left: 0;
+  //   background: #f8fafc;
+  //   box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   padding: 20px 24px;
+  //   display: none;
+
+  //   @media (max-width: $mobile) {
+  //     display: flex;
+  //   }
+  // }
+}
+
+//====================================================================================================
