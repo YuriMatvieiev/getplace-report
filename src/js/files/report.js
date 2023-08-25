@@ -193,7 +193,7 @@ function InitGeocoder(ID) {
       60.85571099962073,
     ],
     language: "en-GB",
-    placeholder: "Start typing any UK address or brand",
+    placeholder: "Type any UK address or postcode",
   });
 
   this.geocoder.addTo("#" + ID);

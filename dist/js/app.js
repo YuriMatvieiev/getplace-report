@@ -5572,10 +5572,6 @@
                 spaceBetween: 40,
                 autoHeight: false,
                 speed: 800,
-                navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
-                },
                 breakpoints: {
                     320: {
                         enabled: false
@@ -6178,7 +6174,7 @@
                 accessToken: mapboxgl.accessToken,
                 bbox: [ -8.585350424507451, 49.89060631678373, 1.762474098318385, 60.85571099962073 ],
                 language: "en-GB",
-                placeholder: "Start typing any UK address or brand"
+                placeholder: "Type any UK address or postcode"
             });
             this.geocoder.addTo("#" + ID);
             this.geocoder.on("clear", (() => {

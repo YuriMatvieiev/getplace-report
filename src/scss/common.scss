@@ -42,3 +42,16 @@
 .emerald {
   color: $emerald-600;
 }
+.black-button {
+  border-radius: 12px;
+  background-color: #0f172a;
+  font-weight: 600;
+  color: #f8fafc;
+  display: inline-block;
+  transition: background-color 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #334155;
+    }
+  }
+}

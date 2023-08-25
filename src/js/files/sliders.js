@@ -32,50 +32,11 @@ function initSliders() {
     // Вказуємо склас потрібного слайдера
     // Створюємо слайдер
     new Swiper(".pricing__slider", {
-      // Вказуємо склас потрібного слайдера
-      // Підключаємо модулі слайдера
-      // для конкретного випадку
 
       slidesPerView: "auto",
       spaceBetween: 40,
       autoHeight: false,
       speed: 800,
-      //touchRatio: 0,
-      //simulateTouch: false,
-      //loop: true,
-      //preloadImages: false,
-      //lazy: true,
-
-      /*
-			// Ефекти
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-
-      // Пагінація
-      /*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-      // Скроллбар
-      /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-      // Кнопки "вліво/вправо"
-      navigation: {
-        prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next",
-      },
 
       // Брейкпоінти
       breakpoints: {
@@ -99,50 +60,19 @@ function initSliders() {
     // Вказуємо склас потрібного слайдера
     // Створюємо слайдер
     new Swiper(".hero__slider", {
-      // Вказуємо склас потрібного слайдера
-      // Підключаємо модулі слайдера
-      // для конкретного випадку
+
       modules: [Autoplay],
       slidesPerView: "auto",
       spaceBetween: 88,
       autoHeight: false,
       speed: 5000,
       allowTouchMove: false,
-      //touchRatio: 0,
-      //simulateTouch: false,
       loop: true,
-      //preloadImages: false,
-      //lazy: true,
       autoplay: {
         delay: 0,
         disableOnInteraction: true, // или сделать так, чтобы восстанавливался autoplay после взаимодействия
       },
-      /*
-			// Ефекти
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
 
-      // Пагінація
-      /*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-      // Скроллбар
-      /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-      // Брейкпоінти
       breakpoints: {
         320: {
           spaceBetween: 24,

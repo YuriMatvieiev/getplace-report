@@ -87,29 +87,29 @@
     @include adaptiveValue("gap", 20, 10, 0, 1328, 767.98);
   }
   // .header__button-log
-  // &__button-log {
-  //   font-weight: 600;
-  //   color: $brand;
-  //   border-bottom: 2px solid transparent;
-  //   transition: border-bottom 0.3s ease 0s;
-  //   @include adaptiveValue("font-size", 16, 12);
-  //   @include adaptiveValue("line-height", 24, 16);
-  //   @media (any-hover: hover) {
-  //     &:hover {
-  //       border-bottom: 2px solid $brand;
-  //     }
-  //   }
-  // }
+  &__button-log {
+    font-weight: 600;
+    color: $brand;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease 0s;
+    font-size: rem(16);
+    line-height: 100%;
+    @media (any-hover: hover) {
+      &:hover {
+        border-bottom: 2px solid $brand;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
   // .header__button-demo
   &__button-demo {
-    padding: 16px 32px;
+    padding: 12px 16px;
     font-size: rem(16);
     border-radius: 8px;
-    @media (max-width: $tablet) {
-      padding: 16px 25px;
-    }
+
     @media (max-width: $mobile) {
-      padding: 8px 16px;
       font-size: rem(14);
       line-height: math.div(20, 14);
     }
