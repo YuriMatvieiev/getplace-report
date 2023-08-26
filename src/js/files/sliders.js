@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Mousewheel } from "swiper/modules";
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -32,12 +32,15 @@ function initSliders() {
     // Вказуємо склас потрібного слайдера
     // Створюємо слайдер
     new Swiper(".pricing__slider", {
-
       slidesPerView: "auto",
+      modules: [Mousewheel],
       spaceBetween: 40,
       autoHeight: false,
       speed: 800,
-
+      centerInsufficientSlides: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
       // Брейкпоінти
       breakpoints: {
         320: {
@@ -60,7 +63,6 @@ function initSliders() {
     // Вказуємо склас потрібного слайдера
     // Створюємо слайдер
     new Swiper(".hero__slider", {
-
       modules: [Autoplay],
       slidesPerView: "auto",
       spaceBetween: 88,
