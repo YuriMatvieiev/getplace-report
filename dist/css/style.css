@@ -1008,6 +1008,7 @@ h6 {
 .hero__form-error-message {
   color: red;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 .location {
@@ -1428,7 +1429,6 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 40px;
 }
 
 .discover__input {
@@ -1454,6 +1454,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 24px;
+  margin-top: 2.5rem;
 }
 
 .discover__button {
@@ -2063,6 +2064,10 @@ h6 {
     margin-top: 9.5rem;
   }
 
+  .hero__form-error-message {
+    font-size: 0.9375rem;
+  }
+
   .location {
     padding-bottom: 6.5rem;
   }
@@ -2392,6 +2397,10 @@ h6 {
 
   .hero__bottom {
     margin-top: 2.5rem;
+  }
+
+  .hero__form-error-message {
+    font-size: 0.75rem;
   }
 
   .location {
@@ -3058,6 +3067,18 @@ h6 {
 @supports not (margin-top: clamp( 2.5rem , 0.4411764706rem  +  10.2941176471vw , 9.5rem )) {
     .hero__bottom {
       margin-top: calc(2.5rem + 7 * (100vw - 20rem) / 68);
+    }
+}
+
+@supports (font-size: clamp( 0.75rem , 0.6948529412rem  +  0.2757352941vw , 0.9375rem )) {
+    .hero__form-error-message {
+      font-size: clamp( 0.75rem , 0.6948529412rem  +  0.2757352941vw , 0.9375rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.6948529412rem  +  0.2757352941vw , 0.9375rem )) {
+    .hero__form-error-message {
+      font-size: calc(0.75rem + 0.1875 * (100vw - 20rem) / 68);
     }
 }
 

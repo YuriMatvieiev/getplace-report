@@ -6211,9 +6211,9 @@
                 e.preventDefault();
                 if (geocoder.data.latitude === 0 || geocoder.data.longitude === 0 || geocoder.data.hex === "" || geocoder.data.address === "" || geocoder.data.postcode === "") {
                     geoErrs.Highlight([ geocoderId ]);
-                    document.getElementById("geocoder1-error").innerText = "Please input a valid UK address or postcode.";
+                    document.getElementById(geocoderId + "-error").innerText = "Please input a UK address or postcode and choose one from the list.";
                 } else {
-                    document.getElementById("geocoder1-error").innerText = "";
+                    document.getElementById(geocoderId + "-error").innerText = "";
                     geoErrs.Clear();
                     document.getElementById("locationAddress").innerText = geocoder.data.address;
                     document.getElementById("geocoderData").value = JSON.stringify(geocoder.data);
