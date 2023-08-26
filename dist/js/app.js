@@ -6209,7 +6209,12 @@
             let geoB = document.getElementById(geocoderId + "-b");
             geoB.addEventListener("click", (e => {
                 e.preventDefault();
-                if (geocoder.data.latitude === 0 || geocoder.data.longitude === 0 || geocoder.data.hex === "" || geocoder.data.address === "" || geocoder.data.postcode === "") geoErrs.Highlight([ geocoderId ]); else {
+                if (geocoder.data.latitude === 0 || geocoder.data.longitude === 0 || geocoder.data.hex === "" || geocoder.data.address === "" || geocoder.data.postcode === "") {
+                    geoErrs.Highlight([ geocoderId ]);
+                    document.getElementById("geocoder1-error").innerText = "Please input a valid UK address or postcode.";
+                } else {
+                    document.getElementById("geocoder1-error").innerText = "";
+                    geoErrs.Clear();
                     document.getElementById("locationAddress").innerText = geocoder.data.address;
                     document.getElementById("geocoderData").value = JSON.stringify(geocoder.data);
                     body.style.overflowY = "hidden";

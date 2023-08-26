@@ -10,11 +10,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230825184209" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230826134413" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="description" content="Get valuable insights into customer behavior and foot traffic with Getplace.io's location reports. Our reports offer in-depth analysis and visualization of your business location data, enabling you to make informed decisions and optimize your business strategy" />
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V22ZKDGG9&_v=20230825184209"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V22ZKDGG9&_v=20230826134413"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -111,7 +111,7 @@
 			}
 		})(document, window.mixpanel || []);
 	</script>
-	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9FKZ2M&_v=20230825184209"></script>
+	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9FKZ2M&_v=20230826134413"></script>
 	<link href="https://getplace.io/report" rel="canonical" />
 </head>
 
@@ -383,7 +383,7 @@
 					</div>
 					<div class="header__buttons">
 						<a href="https://app.getplace.io/login" class="header__button-log">Log in</a>
-						<a href="#" data-goto=".discover" class="header__button-demo button-transparent">Get 1 report for £25</a>
+						<a href="#" data-goto=".discover" class="header__button-demo button-transparent">Get report for £25</a>
 					</div>
 				</div>
 			</div>
@@ -446,10 +446,11 @@
 									<div id="geocoder1" class="hero__form-geocoder" data-tippy-content="You can start by checking your current locations">
 										<i class="hero__form-icon _icon-location-regular"></i>
 									</div>
+									<div class="hero__form-error-message" id="geocoder1-error"></div>
 								</div>
 								<div class="hero__form-right">
 									<button type="submit" class="hero__button button-main" id="geocoder1-b">
-										Get 1 report for £25
+										Get report for £25
 									</button>
 									<div class="hero__form-desc">Money-back guarantee</div>
 								</div>
@@ -604,7 +605,7 @@
 								THE GETPLACE REPORT IS A TIME-SAVING ONE-STOP SHOP WITH
 								CONSOLIDATED LOCATION INTELLIGENCE DATA AND INSIGHTS
 							</h2>
-							<a href="" data-goto=".discover" class="location__bottom-button black-button">Get 1 report for £25</a>
+							<a href="" data-goto=".discover" class="location__bottom-button black-button">Get report for £25</a>
 						</div>
 						<ul class="location__bottom-right">
 							<li class="_icon-checkmark">
@@ -768,7 +769,7 @@
 							<div class="pricing__slide swiper-slide">
 								<div class="pricing__slide-title">
 									<picture><source srcset="img/icon-report-1.webp" type="image/webp"><img src="img/icon-report-1.png" alt="" /></picture>
-									Report-on-Demand
+									Pay As You Go
 								</div>
 								<div class="pricing__slide-subtitle">
 									Perfect for getting started
@@ -780,7 +781,9 @@
 								<a href="#" data-goto-header data-goto=".discover" class="pricing__slide-button button-transparent">Get Report</a>
 								<div class="pricing__slide-desc">Includes</div>
 								<ul class="pricing__slide-list">
-									<li class="_icon-checkmark">Single report</li>
+									<li class="_icon-checkmark">
+										Single report for any UK location
+									</li>
 									<li class="_icon-checkmark">Any UK location</li>
 									<li class="_icon-checkmark">Money-back guarantee</li>
 								</ul>
@@ -804,7 +807,7 @@
 									<li class="_icon-checkmark">
 										Everything in Report-on-Demand
 									</li>
-									<li class="_icon-checkmark">Unlimited reports</li>
+									<li class="_icon-checkmark">Unlimited number of reports</li>
 									<li class="_icon-checkmark">Dedicated advisory</li>
 								</ul>
 							</div>
@@ -826,8 +829,10 @@
 									<li class="_icon-checkmark">
 										Everything in Unlimited Reports
 									</li>
-									<li class="_icon-checkmark">Getplace PricePulse</li>
-									<li class="_icon-checkmark">Getplace Heat Maps</li>
+									<li class="_icon-checkmark">UK Footfall Heat Map</li>
+									<li class="_icon-checkmark">
+										Tools for competitors analysis
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -859,7 +864,7 @@
 
 							<div class="discover__bottom">
 								<button type="submit" class="discover__button button-main" id="geocoder2-b">
-									Get 1 report for £25
+									Get report for £25
 								</button>
 								<div class="discover__subtext">
 									By proceeding, I accept the getplace.io
@@ -930,13 +935,13 @@
 		</footer>
 
 	</div>
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20230825184209" type="text/css" />
-	<script src="https://unpkg.com/h3-js?_v=20230825184209"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20230826134413" type="text/css" />
+	<script src="https://unpkg.com/h3-js?_v=20230826134413"></script>
 
-	<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js?_v=20230825184209"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20230825184209"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js?_v=20230826134413"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20230826134413"></script>
 
-	<script src="js/app.min.js?_v=20230825184209"></script>
+	<script src="js/app.min.js?_v=20230826134413"></script>
 
 </body>
 

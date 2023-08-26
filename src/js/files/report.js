@@ -265,7 +265,11 @@ function InitGeoForm(geocoderId, geocoderSectionId) {
       geocoder.data.postcode === ""
     ) {
       geoErrs.Highlight([geocoderId]);
+      document.getElementById("geocoder1-error").innerText =
+        "Please input a valid UK address or postcode.";
     } else {
+      document.getElementById("geocoder1-error").innerText = "";
+      geoErrs.Clear();
       document.getElementById("locationAddress").innerText =
         geocoder.data.address;
       document.getElementById("geocoderData").value = JSON.stringify(

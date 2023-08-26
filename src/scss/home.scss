@@ -165,6 +165,10 @@
     -webkit-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
   }
+  &__form-error-message {
+    color: red;
+    margin-top: rem(8);
+  }
 }
 
 //====================================================================================================
@@ -175,45 +179,45 @@
   @include adaptiveValue("padding-bottom", 104, 80);
   @include adaptiveValue("padding-top", 100, 80);
   background-color: #7dd3fc;
-  // &__youtube-wrap {
-  //   max-width: rem(1536);
-  //   padding: 0 40px;
-  //   width: 100%;
-  //   @include adaptiveValue("margin-bottom", 80, 24);
-  //   @media (max-width: $mobile) {
-  //     padding: 0 24px;
-  //   }
-  // }
-  // &__youtube {
-  //   position: relative;
-  //   @include adaptiveValue("height", 816, 153);
-  //   border-radius: 8px;
-  //   &-reports {
-  //     background: url("@img/youtube-lr-cover.png") center / cover no-repeat;
-  //   }
-  //   &-heath-map {
-  //     background: url("@img/youtube-heat-map-cover.png") center / cover
-  //       no-repeat;
-  //   }
-  // }
-  // &__video {
-  //   width: 100%;
-  //   height: 100%;
-  //   iframe {
-  //     width: 100%;
-  //     height: 100%;
-  //   }
-  // }
-  // &__button {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   @include adaptiveValue("width", 89, 56);
-  //   img {
-  //     width: 100%;
-  //   }
-  // }
+  &__youtube-wrap {
+    max-width: rem(1536);
+    padding: 0 40px;
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 80, 24);
+    @media (max-width: $mobile) {
+      padding: 0 24px;
+    }
+  }
+  &__youtube {
+    position: relative;
+    @include adaptiveValue("height", 816, 153);
+    border-radius: 8px;
+    &-reports {
+      background: url("@img/youtube-lr-cover.png") center / cover no-repeat;
+    }
+    &-heath-map {
+      background: url("@img/youtube-heat-map-cover.png") center / cover
+        no-repeat;
+    }
+  }
+  &__video {
+    width: 100%;
+    height: 100%;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include adaptiveValue("width", 89, 56);
+    img {
+      width: 100%;
+    }
+  }
   // .location__container
   &__container {
   }
@@ -452,6 +456,8 @@
     position: relative;
 
     height: rem(564);
+    max-width: 2000px;
+    margin: 0 auto;
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 120, 80);
     }
@@ -478,6 +484,7 @@
   }
   // .stats__img
   &__img {
+    max-width: 1000px;
     &-first {
       left: 0;
       width: 50%;
