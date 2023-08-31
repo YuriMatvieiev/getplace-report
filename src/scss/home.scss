@@ -1121,7 +1121,7 @@
   &__title {
     margin-bottom: rem(8);
     font-family: "Space Grotesk";
-    @include adaptiveValue("font-size", 36, 18);
+    @include adaptiveValue("font-size", 36, 24);
     @include adaptiveValue("line-height", 40, 32);
     font-weight: 700;
     text-align: center;
