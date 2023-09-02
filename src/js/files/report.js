@@ -74,7 +74,7 @@ const initSection = function (sectionId, buttonClass, plan) {
       }
 
       if (errors.length === 0) {
-        data = {
+        let data = {
           name: full_name.value,
           company: company.value,
           password: password.value,
@@ -199,7 +199,6 @@ function InitGeocoder(ID) {
   this.geocoder.addTo("#" + ID);
 
   this.geocoder.on("clear", () => {
-    console.log("CLEAR");
     this.data = this.initData();
   });
 

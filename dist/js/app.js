@@ -6548,7 +6548,7 @@
                 if (!password || password.value.length < 6) errors.push(password.getAttribute("id"));
                 if (!email || !ValidateEmail(email.value)) errors.push(email.getAttribute("id"));
                 if (errors.length === 0) {
-                    data = {
+                    let data = {
                         name: full_name.value,
                         company: company.value,
                         password: password.value,
@@ -6629,7 +6629,6 @@
             });
             this.geocoder.addTo("#" + ID);
             this.geocoder.on("clear", (() => {
-                console.log("CLEAR");
                 this.data = this.initData();
             }));
             this.geocoder.on("result", (e => {

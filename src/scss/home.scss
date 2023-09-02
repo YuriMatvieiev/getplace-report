@@ -453,17 +453,47 @@
 //========================================================================================================================================================
 
 .stats {
-  @include adaptiveValue("padding-top", 120, 80);
-  &__item {
-    position: relative;
-
-    height: rem(564);
-    max-width: 2000px;
-    margin: 0 auto;
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 120, 80);
+  &__background {
+    &:nth-child(1) {
+      background: #99a2ff;
+      .stats__list {
+        li {
+          &::before {
+            color: #6366f1;
+          }
+        }
+      }
     }
-
+    &:nth-child(2) {
+      background: #cbd5e1;
+      .stats__list {
+        li {
+          &::before {
+            color: #64748b;
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      background: #93c5fd;
+      .stats__list {
+        li {
+          &::before {
+            color: #3b82f6;
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      background: #7dd3fc;
+      .stats__list {
+        li {
+          &::before {
+            color: #0ea5e9;
+          }
+        }
+      }
+    }
     &:nth-child(even) {
       .stats__container {
         flex-direction: row-reverse;
@@ -480,52 +510,37 @@
         }
       }
     }
+  }
+  &__item {
+    position: relative;
+    @include adaptiveValue("padding-top", 120, 80);
+    max-width: 2000px;
+    margin: 0 auto;
+    @include adaptiveValue("padding-bottom", 120, 80);
+
     @media (max-width: $tablet) {
       height: unset;
     }
   }
   // .stats__img
   &__img {
-    max-width: 1000px;
+    max-width: 920px;
+    max-height: 560px;
     &-first {
-      left: 0;
-      width: 50%;
+      left: -65px;
+      width: calc(50% + 65px);
     }
     &-second {
-      right: -130px;
-      border-radius: 16px;
-      box-shadow:
-        0px 2.767256498336792px 2.2138051986694336px 0px
-          rgba(209, 219, 233, 0.02),
-        0px 6.650102138519287px 5.32008171081543px 0px rgba(209, 219, 233, 0.03),
-        0px 12.521552085876465px 10.017241477966309px 0px
-          rgba(209, 219, 233, 0.04),
-        0px 22.3363094329834px 17.869047164916992px 0px
-          rgba(209, 219, 233, 0.04),
-        0px 41.777610778808594px 33.422088623046875px 0px
-          rgba(209, 219, 233, 0.05),
-        0px 100px 80px 0px rgba(209, 219, 233, 0.07);
-      width: calc(50% + 130px);
+      right: -138px;
+      width: calc(50% + 138px);
     }
     &-three {
-      left: -136px;
-      border-radius: 16px;
-      box-shadow:
-        0px 2.767256498336792px 2.2138051986694336px 0px
-          rgba(209, 219, 233, 0.02),
-        0px 6.650102138519287px 5.32008171081543px 0px rgba(209, 219, 233, 0.03),
-        0px 12.521552085876465px 10.017241477966309px 0px
-          rgba(209, 219, 233, 0.04),
-        0px 22.3363094329834px 17.869047164916992px 0px
-          rgba(209, 219, 233, 0.04),
-        0px 41.777610778808594px 33.422088623046875px 0px
-          rgba(209, 219, 233, 0.05),
-        0px 100px 80px 0px rgba(209, 219, 233, 0.07);
-      width: calc(50% + 136px);
+      left: -65px;
+      width: calc(50% + 65px);
     }
     &-four {
-      right: 0;
-      width: 50%;
+      right: -138px;
+      width: calc(50% + 138px);
     }
     position: absolute;
     top: 50%;
@@ -557,21 +572,15 @@
   }
   // .stats__title
   &__title {
-    font-family: "Krona One";
-    @include adaptiveValue("font-size", 30, 18);
-    @include adaptiveValue("line-height", 36, 28);
-    letter-spacing: -3px;
+    font-family: "Space Grotesk";
+    @include adaptiveValue("font-size", 36, 24);
+    @include adaptiveValue("line-height", 40, 32);
+    font-weight: 700;
     @include adaptiveValue("margin-bottom", 8, 0);
-
-    @media (max-width: $mobile) {
-      letter-spacing: normal;
-    }
   }
   // .stats__subtitle
   &__subtitle {
-    color: #647488;
-    @include adaptiveValue("font-size", 16, 14);
-    @include adaptiveValue("line-height", 24, 20);
+    color: #334155;
     @include adaptiveValue("margin-bottom", 40, 24);
   }
   // .stats__desc
@@ -590,7 +599,6 @@
       }
       &::before {
         font-size: rem(24);
-        color: #6366f1;
         padding: 12px;
         background-color: #f1f5f9;
         border-radius: 50%;
