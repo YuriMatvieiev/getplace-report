@@ -10,11 +10,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230902133739" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230913164831" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="description" content="Get valuable insights into customer behavior and foot traffic with Getplace.io's location reports. Our reports offer in-depth analysis and visualization of your business location data, enabling you to make informed decisions and optimize your business strategy" />
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V22ZKDGG9&_v=20230902133739"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8V22ZKDGG9&_v=20230913164831"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -111,7 +111,7 @@
 			}
 		})(document, window.mixpanel || []);
 	</script>
-	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9FKZ2M&_v=20230902133739"></script>
+	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9FKZ2M&_v=20230913164831"></script>
 	<link href="https://getplace.io/report" rel="canonical" />
 </head>
 
@@ -144,14 +144,17 @@
 							<input class="confirm__form-input hero__input" type="email" name="email" id="full-sub-section-email" />
 							<label class="confirm__form-label" for="email">Account Password</label>
 							<input class="confirm__form-input hero__input" type="password" name="password" id="full-sub-section-password" />
-							<button type="submit" class="confirm__form-button button-main">
-								Full access for £99
-							</button>
-							<div class="confirm__form-desc">
-								By proceeding, I accept the getplace.io
-								<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+							<div class="confirm__form-bottom">
+								<button type="submit" class="confirm__form-button button-main">
+									Full access for £99
+								</button>
+								<div class="confirm__form-desc">
+									By proceeding, I accept the getplace.io
+									<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+								</div>
 							</div>
 						</form>
+						<img class="confirm__main-image" src="img/hero-baner-gost.svg" alt="" />
 					</div>
 				</div>
 				<div class="confirm__sidebar">
@@ -221,14 +224,17 @@
 							<input class="confirm__form-input hero__input" type="email" name="email" id="unlimited-reports-section-email" />
 							<label class="confirm__form-label" for="email">Account Password</label>
 							<input class="confirm__form-input hero__input" type="password" name="password" id="unlimited-reports-section-password" />
-							<button type="submit" class="confirm__form-button button-main">
-								Unlimited reports for £69
-							</button>
-							<div class="confirm__form-desc">
-								By proceeding, I accept the getplace.io
-								<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+							<div class="confirm__form-bottom">
+								<button type="submit" class="confirm__form-button button-main">
+									Unlimited reports for £69
+								</button>
+								<div class="confirm__form-desc">
+									By proceeding, I accept the getplace.io
+									<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+								</div>
 							</div>
 						</form>
+						<img class="confirm__main-image" src="img/hero-baner-gost.svg" alt="" />
 					</div>
 				</div>
 				<div class="confirm__sidebar">
@@ -287,23 +293,50 @@
 						</div>
 						<form action="" class="confirm__form">
 							<a href="report.html#pricing" class="confirm__form-back-button _icon-chevron-left" id="backButton">Back</a>
-							<h1 class="confirm__form-title">
+							<h1 class="confirm__form-title" id="locationAddressTitle">
 								LOCATION INSIGHT REPORT FOR:
 							</h1>
+							<div class="confirm__form-address-wrap" id="locationAddressWrap">
+								<div class="confirm__form-address" id="locationAddress"></div>
+								<div class="confirm__form-edit">
+									<img src="img/icon-edit.svg" alt="" />
+									Edit
+								</div>
+							</div>
+
 							<input type="hidden" id="geocoderData" />
-							<div class="confirm__form-address" id="locationAddress"></div>
+
+							<div class="hero__form-left geocoder-input" id="geocoder-form">
+								<label class="confirm__form-label">
+									Enter the address you want to inspect
+									<span class="confirm__form-label-example">For example: 27 Avery Row, Westminster</span>
+								</label>
+								<div id="geocoder3" class="hero__form-geocoder">
+									<i class="hero__form-icon _icon-location-regular"></i>
+								</div>
+
+								<div class="hero__form-error-message" id="geocoder3-error"></div>
+							</div>
 							<label class="confirm__form-label" for="name">Recipient’s Full Name</label>
 							<input class="confirm__form-input hero__input" type="text" name="name" id="report-on-demand-section-name" />
-							<label class="confirm__form-label" for="email">Business E-mail</label>
+
+							<label class="confirm__form-label" for="email">
+								Business E-mail
+								<span class="confirm__form-label-example">We’ll send you a backup link for the report, and your account
+									details</span>
+							</label>
 							<input class="confirm__form-input hero__input" type="email" name="email" id="report-on-demand-section-email" />
-							<button type="submit" class="confirm__form-button button-main">
-								Get personal report for £25
-							</button>
-							<div class="confirm__form-desc">
-								By proceeding, I accept the getplace.io
-								<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+							<div class="confirm__form-bottom">
+								<button id="geocoder3-b" type="submit" class="confirm__form-button button-main">
+									Get 1 report for £25
+								</button>
+								<div class="confirm__form-desc">
+									By proceeding, I accept the getplace.io
+									<a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+								</div>
 							</div>
 						</form>
+						<img class="confirm__main-image" src="img/hero-baner-gost.svg" alt="" />
 					</div>
 				</div>
 				<div class="confirm__sidebar">
@@ -328,19 +361,14 @@
 						</div>
 						<div class="confirm__sidebar-bottom">
 							<div class="confirm__sidebar-testimonial">
-								It’s very useful to have Getplace tools by my side. I much
-								prefer to see facts and figures and act on them before anybody
-								else does.
+								It’s very useful to have Getplace tools by my side. I much prefer
+								to see facts and figures and act on them before anybody else does.
 							</div>
 							<div class="confirm__sidebar-autor">
 								<picture><source srcset="img/graham-atkinson.webp" type="image/webp"><img src="img/graham-atkinson.png" alt="Graham Atkinson photo" class="confirm__sidebar-autor-photo" /></picture>
 								<div class="confirm__sidebar-autor-text">
-									<div class="confirm__sidebar-autor-name">
-										Graham Atkinson
-									</div>
-									<div class="confirm__sidebar-autor-job">
-										Owner / Director
-									</div>
+									<div class="confirm__sidebar-autor-name">Graham Atkinson</div>
+									<div class="confirm__sidebar-autor-job">Owner / Director</div>
 									<div class="confirm__sidebar-autor-business">
 										Homies Pizza and Butta Burger
 									</div>
@@ -352,6 +380,7 @@
 			</section>
 		</main>
 	</div>
+
 	<div class="wrapper" id="main">
 		<header class="header">
 			<div class="header__top">
@@ -383,7 +412,9 @@
 					</div>
 					<div class="header__buttons">
 						<a href="https://app.getplace.io/login" class="header__button-log">Log in</a>
-						<a href="#" data-goto=".discover" class="cta__header header__button-demo button-transparent">Get report for £25</a>
+						<button class="cta__header header__button-demo button-transparent geocoder3">
+							Get report for £25
+						</button>
 					</div>
 				</div>
 			</div>
@@ -1045,13 +1076,13 @@
 		</footer>
 
 	</div>
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20230902133739" type="text/css" />
-	<script src="https://unpkg.com/h3-js?_v=20230902133739"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20230913164831" type="text/css" />
+	<script src="https://unpkg.com/h3-js?_v=20230913164831"></script>
 
-	<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js?_v=20230902133739"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20230902133739"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js?_v=20230913164831"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20230913164831"></script>
 
-	<script src="js/app.min.js?_v=20230902133739"></script>
+	<script src="js/app.min.js?_v=20230913164831"></script>
 
 </body>
 

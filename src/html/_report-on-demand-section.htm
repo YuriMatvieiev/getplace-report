@@ -23,11 +23,32 @@
               id="backButton"
               >Back</a
             >
-            <h1 class="confirm__form-title">
+            <h1 class="confirm__form-title" id="locationAddressTitle">
               LOCATION INSIGHT REPORT FOR:
             </h1>
+            <div class="confirm__form-address-wrap" id="locationAddressWrap">
+              <div class="confirm__form-address" id="locationAddress"></div>
+              <div class="confirm__form-edit">
+                <img src="@img/icon-edit.svg" alt="" />
+                Edit
+              </div>
+            </div>
+
             <input type="hidden" id="geocoderData" />
-            <div class="confirm__form-address" id="locationAddress"></div>
+
+            <div class="hero__form-left geocoder-input" id="geocoder-form">
+              <label class="confirm__form-label">
+                Enter the address you want to inspect
+                <span class="confirm__form-label-example"
+                  >For example: 27 Avery Row, Westminster</span
+                >
+              </label>
+              <div id="geocoder3" class="hero__form-geocoder">
+                <i class="hero__form-icon _icon-location-regular"></i>
+              </div>
+
+              <div class="hero__form-error-message" id="geocoder3-error"></div>
+            </div>
             <label class="confirm__form-label" for="name"
               >Recipient’s Full Name</label
             >
@@ -37,23 +58,39 @@
               name="name"
               id="report-on-demand-section-name"
             />
-            <label class="confirm__form-label" for="email"
-              >Business E-mail</label
-            >
+
+            <label class="confirm__form-label" for="email">
+              Business E-mail
+              <span class="confirm__form-label-example"
+                >We’ll send you a backup link for the report, and your account
+                details</span
+              >
+            </label>
             <input
               class="confirm__form-input hero__input"
               type="email"
               name="email"
               id="report-on-demand-section-email"
             />
-            <button type="submit" class="confirm__form-button button-main">
-              Get personal report for £25
-            </button>
-            <div class="confirm__form-desc">
-              By proceeding, I accept the getplace.io
-              <a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+            <div class="confirm__form-bottom">
+              <button
+                id="geocoder3-b"
+                type="submit"
+                class="confirm__form-button button-main"
+              >
+                Get 1 report for £25
+              </button>
+              <div class="confirm__form-desc">
+                By proceeding, I accept the getplace.io
+                <a href="https://getplace.io/privacy.html">Privacy Policy</a>.
+              </div>
             </div>
           </form>
+          <img
+            class="confirm__main-image"
+            src="@img/hero-baner-gost.svg"
+            alt=""
+          />
         </div>
       </div>
       <div class="confirm__sidebar">
@@ -78,9 +115,8 @@
           </div>
           <div class="confirm__sidebar-bottom">
             <div class="confirm__sidebar-testimonial">
-              It’s very useful to have Getplace tools by my side. I much
-              prefer to see facts and figures and act on them before anybody
-              else does.
+              It’s very useful to have Getplace tools by my side. I much prefer
+              to see facts and figures and act on them before anybody else does.
             </div>
             <div class="confirm__sidebar-autor">
               <img
@@ -89,12 +125,8 @@
                 class="confirm__sidebar-autor-photo"
               />
               <div class="confirm__sidebar-autor-text">
-                <div class="confirm__sidebar-autor-name">
-                  Graham Atkinson
-                </div>
-                <div class="confirm__sidebar-autor-job">
-                  Owner / Director
-                </div>
+                <div class="confirm__sidebar-autor-name">Graham Atkinson</div>
+                <div class="confirm__sidebar-autor-job">Owner / Director</div>
                 <div class="confirm__sidebar-autor-business">
                   Homies Pizza and Butta Burger
                 </div>

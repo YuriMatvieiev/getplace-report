@@ -24,13 +24,32 @@ const initSection = function (sectionId, buttonClass, plan) {
   }
 
   let backButtons = section.getElementsByClassName("confirm__form-back-button");
+  const urlParams = new URLSearchParams(window.location.search);
+  const locationInput = urlParams.get("address");
+  const locationAddress = document.getElementById("locationAddress");
+  const locationAddressWrap = document.getElementById("locationAddressWrap");
+  const geocoderForm = document.getElementById("geocoder-form");
+  const locationAddressTitle = document.getElementById("locationAddressTitle");
 
+  // Добавьте обработчик события клика на locationAddress
+  locationAddressWrap.addEventListener("click", () => {
+    locationAddressWrap.style.display = "none";
+    locationAddressTitle.style.display = "none";
+    geocoderForm.style.display = "block";
+  });
+
+  if (locationInput) {
+    locationAddress.textContent = locationInput;
+  }
   for (let b of backButtons) {
     b.addEventListener("click", (e) => {
       e.preventDefault();
 
       body.style.overflowY = "scroll";
       section.style.display = "none";
+      geocoderForm.style.display = "block";
+      locationAddressWrap.style.display = "none";
+      locationAddressTitle.style.display = "none";
     });
   }
 
@@ -64,13 +83,13 @@ const initSection = function (sectionId, buttonClass, plan) {
 
       let errors = [];
       if (!full_name || full_name.value.length < 2) {
-        errors.push(full_name.getAttribute("id"));
+        errors.push(full_name ? full_name.getAttribute("id") : null);
       }
       if (!password || password.value.length < 6) {
-        errors.push(password.getAttribute("id"));
+        errors.push(password ? password.getAttribute("id") : null);
       }
       if (!email || !ValidateEmail(email.value)) {
-        errors.push(email.getAttribute("id"));
+        errors.push(email ? email.getAttribute("id") : null);
       }
 
       if (errors.length === 0) {
@@ -159,14 +178,22 @@ var Errors = function (ids, errContainer = "") {
   };
   this.Highlight = function (ids) {
     for (let i of ids) {
-      document.getElementById(i).classList.add("error");
+      let element = document.getElementById(i);
+      if (element) {
+        element.classList.add("error");
+      }
     }
   };
+
   this.Clear = function () {
     for (let i of this.ids) {
-      document.getElementById(i).classList.remove("error");
+      let element = document.getElementById(i);
+      if (element) {
+        element.classList.remove("error");
+      }
     }
   };
+
   this.ShowSnack = function (msg) {
     SnackBar({ message: msg, icon: "danger", status: "red" });
   };
@@ -232,6 +259,9 @@ function InitGeoForm(geocoderId, geocoderSectionId) {
   let section = document.getElementById(geocoderSectionId);
   let body = document.getElementsByTagName("body")[0];
 
+  document.getElementById("geocoder-form").style.display = "block"; // Показать geocoder-form при нажатии кнопки "Back"
+  document.getElementById("locationAddressWrap").style.display = "none"; // Спрятать locationAddress при нажатии кнопки "Back"
+  document.getElementById("locationAddressTitle").style.display = "none";
   if (!section || !document.getElementById(geocoderId)) {
     return;
   }
@@ -277,6 +307,10 @@ function InitGeoForm(geocoderId, geocoderSectionId) {
 
       body.style.overflowY = "hidden";
       section.style.display = "block";
+
+      document.getElementById("geocoder-form").style.display = "none";
+      document.getElementById("locationAddressWrap").style.display = "block";
+      document.getElementById("locationAddressTitle").style.display = "block";
     }
   });
 }
@@ -288,9 +322,10 @@ initSection(
   "unlimited-reports-b",
   planUnlimitedReports
 );
-
+initSection("report-on-demand-section", "geocoder3");
 InitGeoForm("geocoder1", "report-on-demand-section");
 InitGeoForm("geocoder2", "report-on-demand-section");
+InitGeoForm("geocoder3", "report-on-demand-section");
 
 let geocoderForm = document.getElementById("report-on-demand-section");
 if (!!geocoderForm) {
@@ -306,7 +341,7 @@ if (!!geocoderForm) {
 
       let email = document.getElementById("report-on-demand-section-email");
       let name = document.getElementById("report-on-demand-section-name");
-      let data = JSON.parse(document.getElementById("geocoderData").value);
+      let geocoderDataElement = document.getElementById("geocoderData");
       let errors = [];
 
       if (!ValidateEmail(email.value)) {
@@ -316,29 +351,45 @@ if (!!geocoderForm) {
       if (!name.value || name.value.length < 2) {
         errors.push(name.getAttribute("id"));
       }
-      if (errors.length === 0) {
-        data.full_name = name.value;
-        data.email = email.value;
-        data.company_name = "company";
 
-        let xhttp = new XMLHttpRequest();
+      if (geocoderDataElement) {
+        let geocoderData = geocoderDataElement.value;
 
-        xhttp.onreadystatechange = () => {
-          if (xhttp.readyState === 4) {
-            try {
-              let resp = JSON.parse(xhttp.response);
-              if (resp?.status === "ok") {
-                window.location.href =
-                  "https://buy.stripe.com/cN2bKBcwpabBgYUcN7?client_reference_id=" +
-                  resp.id;
+        if (geocoderData) {
+          try {
+            let data = JSON.parse(geocoderData);
+            data.full_name = name.value;
+            data.email = email.value;
+            data.company_name = "company";
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = () => {
+              if (xhttp.readyState === 4) {
+                try {
+                  let resp = JSON.parse(xhttp.response);
+                  if (resp?.status === "ok") {
+                    window.location.href =
+                      "https://buy.stripe.com/cN2bKBcwpabBgYUcN7?client_reference_id=" +
+                      resp.id;
+                  }
+                } catch (e) {}
               }
-            } catch (e) {}
-          }
-        };
+            };
 
-        xhttp.open("POST", HOST + "/report-order", true);
-        xhttp.send(JSON.stringify(data));
+            xhttp.open("POST", HOST + "/report-order", true);
+            xhttp.send(JSON.stringify(data));
+          } catch (e) {
+            console.error("Invalid JSON data:", e);
+          }
+        } else {
+          console.error("Empty JSON data");
+        }
       } else {
+        console.error("geocoderData element not found");
+      }
+
+      if (errors.length > 0) {
         formBErrs.Highlight(errors);
       }
     });
