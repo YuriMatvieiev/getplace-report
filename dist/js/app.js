@@ -6696,6 +6696,8 @@
         initSection("full-sub-section", "full-sub-b", planFullSub);
         initSection("unlimited-reports-section", "unlimited-reports-b", planUnlimitedReports);
         initSection("report-on-demand-section", "geocoder3");
+        initSection("report-on-demand-section", "geocoder4");
+        initSection("report-on-demand-section", "geocoder5");
         InitGeoForm("geocoder1", "report-on-demand-section");
         InitGeoForm("geocoder2", "report-on-demand-section");
         InitGeoForm("geocoder3", "report-on-demand-section");

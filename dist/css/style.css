@@ -2125,6 +2125,12 @@ summary::-webkit-details-marker {
   display: none !important;
 }
 
+@media ((max-height: 800px) and (min-width: 61.99875em)) {
+  .confirm {
+    height: 800px;
+  }
+}
+
 @media (min-width: 83em) {
   .header__left {
     gap: 5.25rem;
@@ -2909,6 +2915,13 @@ summary::-webkit-details-marker {
     display: none;
   }
 
+  .confirm__form-edit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: -20px;
+  }
+
   .confirm__sidebar {
     padding: 40px 24px;
   }
@@ -2988,6 +3001,11 @@ summary::-webkit-details-marker {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+
+  .confirm__form-edit {
+    gap: 4px;
+    padding: 4px;
   }
 }
 

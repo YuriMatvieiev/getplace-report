@@ -923,6 +923,9 @@
     flex-direction: column;
     height: 100%;
   }
+  @media ((max-height: 800px) and (min-width: $tablet )) {
+    height: 800px;
+  }
   .hero__form-geocoder {
     margin-bottom: rem(24);
   }
@@ -934,10 +937,6 @@
       width: 100%;
     }
     &-image {
-      // position: absolute;
-      // bottom: -60%;
-      // left: 50%;
-      // transform: translateX(-50%);
       width: 100%;
       max-width: rem(848);
       margin: 0 auto;
@@ -1029,6 +1028,14 @@
     background: #f8fafc;
     align-items: center;
     z-index: 1;
+    @media (max-width: $mobile) {
+      display: flex;
+      top: -20px;
+    }
+    @media (max-width: $mobileSmall) {
+      gap: 4px;
+      padding: 4px;
+    }
     img {
       width: 24px;
       height: 24px;
@@ -1044,6 +1051,7 @@
     background: #eef2ff;
     border: 2px solid transparent;
     transition: border 0.3s ease 0s;
+
     &-wrap {
       width: 100%;
       height: 100%;

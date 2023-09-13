@@ -323,6 +323,8 @@ initSection(
   planUnlimitedReports
 );
 initSection("report-on-demand-section", "geocoder3");
+initSection("report-on-demand-section", "geocoder4");
+initSection("report-on-demand-section", "geocoder5");
 InitGeoForm("geocoder1", "report-on-demand-section");
 InitGeoForm("geocoder2", "report-on-demand-section");
 InitGeoForm("geocoder3", "report-on-demand-section");
