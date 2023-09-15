@@ -9,8 +9,7 @@ const planFullSub = 1;
 const planUnlimitedReports = 2;
 
 function ValidateEmail(value) {
-  const email_filter =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const email_filter = /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i;
   return email_filter.test(value);
 }
 
@@ -348,10 +347,14 @@ if (!!geocoderForm) {
 
       if (!ValidateEmail(email.value)) {
         errors.push(email.getAttribute("id"));
+        formBErrs.Highlight(errors);
+        return false;
       }
 
       if (!name.value || name.value.length < 2) {
         errors.push(name.getAttribute("id"));
+        formBErrs.Highlight(errors);
+        return false;
       }
 
       if (geocoderDataElement) {

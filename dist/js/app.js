@@ -6507,7 +6507,7 @@
         const planFullSub = 1;
         const planUnlimitedReports = 2;
         function ValidateEmail(value) {
-            const email_filter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            const email_filter = /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i;
             return email_filter.test(value);
         }
         const initSection = function(sectionId, buttonClass, plan) {
@@ -6711,8 +6711,16 @@
                 let name = document.getElementById("report-on-demand-section-name");
                 let geocoderDataElement = document.getElementById("geocoderData");
                 let errors = [];
-                if (!ValidateEmail(email.value)) errors.push(email.getAttribute("id"));
-                if (!name.value || name.value.length < 2) errors.push(name.getAttribute("id"));
+                if (!ValidateEmail(email.value)) {
+                    errors.push(email.getAttribute("id"));
+                    formBErrs.Highlight(errors);
+                    return false;
+                }
+                if (!name.value || name.value.length < 2) {
+                    errors.push(name.getAttribute("id"));
+                    formBErrs.Highlight(errors);
+                    return false;
+                }
                 if (geocoderDataElement) {
                     let geocoderData = geocoderDataElement.value;
                     if (geocoderData) try {

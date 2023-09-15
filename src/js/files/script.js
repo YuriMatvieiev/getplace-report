@@ -53,12 +53,3 @@ if (header) {
     });
   });
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const locationInput = urlParams.get("address");
-//   const locationAddress = document.getElementById("locationAddress");
-//   if (locationInput) {
-//     locationAddress.textContent = locationInput;
-//   }
-// });
