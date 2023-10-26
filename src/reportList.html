@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  @@include('html/_head.htm',{ "title":"Location Insights with Comprehensive Location Reports for the whole UK" })
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T6C3HGX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="wrapper" id="main">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <section class="locations-list">
+          <div class="locations-list__container">
+            <h1 class="locations-list__title">Available locations</h1>
+            <h2 class="locations-list__subtite">
+              List of cities we can provide location reports for
+            </h2>
+            <div class="locations-list__wrap">
+              <div class="locations-list__item">
+                <div class="locations-list__item-letter">A</div>
+                <ul class="locations-list__item-list">
+                  <li>
+                    <a href="#">Aberdeen</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="locations-list__item">
+                <div class="locations-list__item-letter">B</div>
+                <ul class="locations-list__item-list">
+                  <li>
+                    <a href="#">Barnsley</a>
+                  </li>
+                  <li>
+                    <a href="#">Basildon</a>
+                  </li>
+                  <li>
+                    <a href="#">Basingstoke</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

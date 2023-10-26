@@ -1,7 +1,7 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .button-main {
   background-color: $brand;
-  border-radius: 100px;
+  border-radius: 12px;
   color: $white;
   line-height: math.div(24, 16);
   transition: background-color 0.3s ease 0s;
@@ -16,7 +16,7 @@
 }
 
 .button-transparent {
-  border-radius: 100px;
+  border-radius: 12px;
   border: 2px solid $brand;
   font-weight: 600;
   color: $brand;
